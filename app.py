@@ -2,14 +2,13 @@ from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_cors import CORS
-import os
+# import os
 
 app = Flask(__name__)
 CORS(app)
 
-basedir = os.path.abspath(os.path.dirname(__file__))
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
-    os.path.join(basedir, 'app.sqlite')
+# basedir = os.path.abspath(os.path.dirname(__file__))
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://bwtnzqzxuzwcsq:c4ac96db90773d9142aacc965b0495de4b43c30c2ddd5b20decd39d436fd7ec8@ec2-18-214-35-70.compute-1.amazonaws.com:5432/d75jbirfmp1s54'
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
